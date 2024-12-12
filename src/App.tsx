@@ -5,7 +5,7 @@ import PokemonCard from "./components/PokemonCard";
 function App() {
   return (
     <div>
-      <PokemonCard pokemon={pokemonList[0]} />
+      <PokemonCard name={pokemonList[0].name} imgSrc={pokemonList[0].imgSrc} />
     </div>
   );
 }
