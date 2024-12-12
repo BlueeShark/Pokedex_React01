@@ -1,12 +1,27 @@
+import { useState } from "react";
 import "./App.css";
 
 import PokemonCard from "./components/PokemonCard";
 
+
 function App() {
+
+  const [pokemon, pokemonIndex] = useState(0)
+
+  const NextPoke = () => {
+    pokemonIndex(pokemon + 1)
+  };
+  const PrevPoke = () => {
+    pokemonIndex(pokemon - 1)
+  };
+
   return (
     <div>
-      <PokemonCard name={pokemonList[0].name} imgSrc={pokemonList[0].imgSrc} />
+      <PokemonCard name={pokemonList[pokemon].name} imgSrc={pokemonList[pokemon].imgSrc} />
+      <button type="button" onClick={PrevPoke}>precedent</button>
+      <button type="button" onClick={NextPoke}>Suivant</button>
     </div>
+
   );
 }
 
