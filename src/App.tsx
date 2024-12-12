@@ -6,18 +6,19 @@ import PokemonCard from "./components/PokemonCard";
 
 function App() {
 
-  const [pokemon, pokemonIndex] = useState(0)
+  const [pokemonIndex, pokemon] = useState(0)
+
+  const PrevPoke = () => {
+    pokemon(pokemonIndex > 0 ? pokemonIndex - 1 : 0 )
+  };
 
   const NextPoke = () => {
-    pokemonIndex(pokemon + 1)
-  };
-  const PrevPoke = () => {
-    pokemonIndex(pokemon - 1)
+    pokemon(pokemonIndex < pokemonList.length -1 ? pokemonIndex + 1 : pokemonIndex )
   };
 
   return (
     <div>
-      <PokemonCard name={pokemonList[pokemon].name} imgSrc={pokemonList[pokemon].imgSrc} />
+      <PokemonCard {...pokemonList[pokemonIndex]} />
       <button type="button" onClick={PrevPoke}>precedent</button>
       <button type="button" onClick={NextPoke}>Suivant</button>
     </div>
@@ -27,13 +28,28 @@ function App() {
 
 const pokemonList = [
   {
-    name: "bulbasaur",
-    imgSrc:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-  },
-  {
-    name: "mew",
-  },
-];
+      name: "bulbasaur",
+      imgSrc:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+    },
+    {
+      name: "charmander",
+      imgSrc:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+    },
+    {
+      name: "squirtle",
+      imgSrc:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+    },
+    {
+      name: "pikachu",
+      imgSrc:
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+    },
+    {
+      name: "mew",
+    },
+  ];
 
 export default App;
