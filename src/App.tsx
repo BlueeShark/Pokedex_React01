@@ -3,24 +3,30 @@ import "./App.css";
 
 import PokemonCard from "./components/PokemonCard";
 
+const [pokemonIndex, setPokemonIndex] = useState(0)
+
+function Article({ name }) {
+  return (
+    <button type= "button" onClick={}>
+      {name}
+    </button>
+  );
+}
 
 function App() {
-
-  const [pokemonIndex, pokemon] = useState(0)
-
-  const PrevPoke = () => {
-    pokemon(pokemonIndex > 0 ? pokemonIndex - 1 : 0 )
-  };
-
-  const NextPoke = () => {
-    pokemon(pokemonIndex < pokemonList.length -1 ? pokemonIndex + 1 : pokemonIndex )
-  };
 
   return (
     <div>
       <PokemonCard {...pokemonList[pokemonIndex]} />
-      <button type="button" onClick={PrevPoke}>precedent</button>
-      <button type="button" onClick={NextPoke}>Suivant</button>
+      <ul>
+        {pokemonList
+          .map((article) => (
+            <Article
+              key={article.name} 
+              name={article.name}
+            />
+          ))}
+      </ul>
     </div>
 
   );
