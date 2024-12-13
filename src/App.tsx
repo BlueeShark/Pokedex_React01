@@ -17,7 +17,7 @@ function App() {
 
   return (
     <div>
-      <PokemonCard {...pokemonList[pokemonIndex]} />
+      <PokemonCard pokeCard ={pokemonList[pokemonIndex]} />
       <ul>
         {pokemonList
           .map((article, index) => (
