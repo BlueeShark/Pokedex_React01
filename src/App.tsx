@@ -1,15 +1,9 @@
 import { useState } from "react";
 import "./App.css";
-
+import data from "./data/pokemonList.json";
 import PokemonCard from "./components/PokemonCard";
+import Navbar from "./components/Navbar";
 
-function Article({ name, setIndex }) {
-  return (
-    <button type= "button" onClick={setIndex}>
-      {name}
-    </button>
-  );
-}
 
 function App() {
 
@@ -17,45 +11,10 @@ function App() {
 
   return (
     <div>
-      <PokemonCard pokeCard ={pokemonList[pokemonIndex]} />
-      <ul>
-        {pokemonList
-          .map((article, index) => (
-            <Article
-              setIndex={() => setPokemonIndex(index)}
-              key={article.name} 
-              name={article.name}
-            />
-          ))}
-      </ul>
+      <PokemonCard pokemon ={data.pokemonList[pokemonIndex]} />
+      <Navbar setPokemonIndex={setPokemonIndex} pokemonList={data.pokemonList}/>
     </div>
   );
 }
-
-const pokemonList = [
-  {
-      name: "bulbasaur",
-      imgSrc:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-    },
-    {
-      name: "charmander",
-      imgSrc:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
-    },
-    {
-      name: "squirtle",
-      imgSrc:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
-    },
-    {
-      name: "pikachu",
-      imgSrc:
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
-    },
-    {
-      name: "mew",
-    },
-  ];
 
 export default App;
