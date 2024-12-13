@@ -3,11 +3,9 @@ import "./App.css";
 
 import PokemonCard from "./components/PokemonCard";
 
-const [pokemonIndex, setPokemonIndex] = useState(0)
-
-function Article({ name }) {
+function Article({ name, setIndex }) {
   return (
-    <button type= "button" onClick={}>
+    <button type= "button" onClick={setIndex}>
       {name}
     </button>
   );
@@ -15,20 +13,22 @@ function Article({ name }) {
 
 function App() {
 
+  const [pokemonIndex, setPokemonIndex] = useState(0)
+
   return (
     <div>
       <PokemonCard {...pokemonList[pokemonIndex]} />
       <ul>
         {pokemonList
-          .map((article) => (
+          .map((article, index) => (
             <Article
+              setIndex={() => setPokemonIndex(index)}
               key={article.name} 
               name={article.name}
             />
           ))}
       </ul>
     </div>
-
   );
 }
 
