@@ -1,6 +1,9 @@
+import "./PokemonCard.css"
+
 interface PokemonCardProps {
   pokemon : {
     name: string;
+    color: string;
     imgSrc?: string;
   }
 }
@@ -8,7 +11,7 @@ interface PokemonCardProps {
 function PokemonCard({ pokemon } : PokemonCardProps) {
 
   return (
-    <figure>
+    <figure className="pokemonCard" style={{['--item-color' as string]: pokemon.color}}>
 
       {pokemon.imgSrc ? 
       <img src={pokemon.imgSrc} alt={pokemon.name}/> : <p>???</p>}

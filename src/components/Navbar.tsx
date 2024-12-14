@@ -1,6 +1,9 @@
+import "./NavBar.css";
+
 interface Pokemon {
     name: string;
     imgSrc?: string;
+    color: string;
   }
   
   interface NavBarProps {
@@ -19,9 +22,9 @@ interface Pokemon {
         }
     }
     return (
-        <nav>
+        <nav className="pokemonButton">
         {pokemonList.map((pokemon, index) => (
-            <button type= "button" onClick={() => handlePokemonClick(pokemon, index)} key={pokemon.name} name={pokemon.name} >
+            <button style={{['--item-color' as string]: pokemon.color}} type= "button" onClick={() => handlePokemonClick(pokemon, index)} key={pokemon.name} name={pokemon.name} >
             {pokemon.name}
             </button>
           ))}

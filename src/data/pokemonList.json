@@ -2,22 +2,27 @@
     "pokemonList": [
       {
         "name": "bulbasaur",
+        "color": "green",
         "imgSrc": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
       },
       {
         "name": "charmander",
+        "color": "orange",
         "imgSrc": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png"
       },
       {
         "name": "squirtle",
+        "color": "lightblue",
         "imgSrc": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png"
       },
       {
         "name": "pikachu",
+        "color": "yellow",
         "imgSrc": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
       },
       {
-        "name": "mew"
+        "name": "mew",
+        "color": "red"
       }
     ]
 }

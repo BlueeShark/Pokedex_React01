@@ -1,0 +1,19 @@
+.pokemonCard {
+    background-color: var(--item-color);
+    border-radius: 20px;
+    box-shadow: 0 0 15px black;
+    padding: 50px 50px 0PX 50px;
+    img {
+        background-color: white;
+        border-radius: inherit;
+        box-shadow: inherit;
+        width: 100%;
+    }
+    figcaption {
+        padding: 50px;
+        color: white;
+        font-size: 2rem;
+        font-weight: 800;
+        text-shadow: 0 0 15px black;
+    }
+}
